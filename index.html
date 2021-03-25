@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Templace</title>
+		<!----------------------css start-------------------------------------->
+		<style type="text/css">
+			header{
+				background-color: green;
+				border:2px solid black;
+			}
+			table tr{
+				border:1px solid black;
+			}
+			#cont{
+				display:grid;
+				grid-template-areas: 
+						"header header header"
+						"content content advert"
+						"footer footer footer"
+			}
+			@media(max-width:1024px){
+				#cont{
+				display:grid;
+				grid-template-areas: 
+						"header header"
+						"content content"
+						"footer footer"
+						"advert advert"
+						
+				}
+				#head{
+				grid-area:header; 
+				}
+				#t1{
+				grid-area:content 
+				}
+				#t2{
+				grid-area:advert;
+				}
+			}
+			#head{
+				grid-area:header; 
+			}
+			#t1{
+				grid-area:content;
+				margin:5px;
+				background-color: gray;
+				height:200px;
+			}
+			#t2{
+				grid-area:advert;
+				margin:5px;
+				background-color: gray;
+				height:200px;
+			}
+			#footer{
+				margin:5px;
+				grid-area:footer;
+
+			}
+		</style>
+		<!---------------------css end------------------------------------------>	
+		<script src="script.js" async></script>
+
+	</head>
+
+	<body>
+		<h1>The Templace</h1>
+		<header>
+			<h1 id="head">Cart</h2>
+		</header>
+
+		<div id="cont">
+		
+			<table id="t1" class="table">
+				<thead>
+				<tr>
+					<th>Produt</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Total</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td><a href="https://placeholder.com"><img src="https://via.placeholder.com/50"></a>Product1</td>
+					<td><input type="text" value="5" class="price form-control" disabled></td>
+					<td><div class="quantity">
+                           <button class="plus-btn" type="button" value="+">+</button>
+                           <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                           <button class="minus-btn" type="button" value="-">-</button>
+                    	</div>
+                    </td>
+					<td align="center">$ <span id="amount" class="amount">0</span></td>
+					<td><button type="button" class="dangr-btn">Remove</button></td>
+				</tr>
+				<tr>
+					<td><a href="https://placeholder.com"><img src="https://via.placeholder.com/50"></a>Product2</td>
+					<td><input type="text" value="10" class="price form-control" disabled></td>
+					<td><div class="quantity">
+                           <button class="plus-btn" type="button" value="+">+</button>
+                           <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                           <button class="minus-btn" type="button" value="-">-</button>
+                    	</div>
+                    </td>
+					<td align="center">$ <span id="amount" class="amount">0</span></td>
+					<td><button type="button" class="dangr-btn">Remove</button></td>
+				</tr>
+				<tr>
+					<td><a href="https://placeholder.com"><img src="https://via.placeholder.com/50"></a>Product3</td>
+					<td><input type="text" value="5" class="price form-control" disabled></td>
+					<td><div class="quantity">
+                           <button class="plus-btn" type="button" value="+">+</button>
+                           <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                           <button class="minus-btn" type="button" value="-">-</button>
+                    	</div>
+                    </td>
+					<td align="center">$ <span id="amount" class="amount">0</span></td>
+					<td><button type="button" class="dangr-btn">Remove</button></td>
+				</tr>
+				</tbody>
+			</table>
+
+
+			<table id="t2">
+				<tr>
+					<th>Cart totals</th>
+				</tr>
+				<tr>
+					<td>Subtotal</td>
+					<td>92</td>
+				</tr>
+					<td>Total</td>
+					<td>92</td>
+			</table>
+
+			<div id="footer">
+				<input type="text" placeholder="Coupon Code">
+				<button>APPLY COUPON</button>
+				<button>UPDATE CART</button>
+			</div>
+		</div>
+	</body>
+</html>
